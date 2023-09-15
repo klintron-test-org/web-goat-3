@@ -1,9 +1,14 @@
-  name: "trivy"
-on: [push]
+name: "trivy"
+on: push
 
 jobs:
     trivy:
         runs-on: ubuntu-latest
+	 permissions:
+            actions: read
+            contents: read
+            security-events: write
+            packages: write
         steps:
             -   uses: actions/checkout@v3
             
